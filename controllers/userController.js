@@ -22,3 +22,4 @@ const imagePng = async(req,res)=>{
         }
 
         // Get the original filename
+        const originalFilename = req.file.originalname;
