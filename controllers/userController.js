@@ -18,3 +18,4 @@ const imagePng = async(req,res)=>{
         const {conversionType} = req.body
         console.log(conversionType);
         if (!req.file) {
+            return res.status(400).send('No file uploaded.');
