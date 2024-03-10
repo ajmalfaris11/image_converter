@@ -1,1 +1,2 @@
 
+const sharp = require('sharp');
