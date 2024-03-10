@@ -15,3 +15,4 @@ const loadPage = async(req,res)=>{
 
 const imagePng = async(req,res)=>{
     try {
+        const {conversionType} = req.body
