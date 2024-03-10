@@ -7,3 +7,4 @@ const loadPage = async(req,res)=>{
         res.render('index')
     } catch (error) {
         console.log(error.message);
+    }
