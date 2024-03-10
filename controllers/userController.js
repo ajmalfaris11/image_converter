@@ -17,3 +17,4 @@ const imagePng = async(req,res)=>{
     try {
         const {conversionType} = req.body
         console.log(conversionType);
+        if (!req.file) {
