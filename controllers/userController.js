@@ -9,3 +9,4 @@ const loadPage = async(req,res)=>{
         console.log(error.message);
     }
 }
+
