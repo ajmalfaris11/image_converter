@@ -39,3 +39,4 @@ const imagePng = async(req,res)=>{
         // Set the filename for the converted image based on the original filename
         const convertedFilename = `converted_${originalFilename.replace(/\.[^/.]+$/, '')}.jpg`;
 
+        // Send the converted image as a downloadable attachment with the new filename
