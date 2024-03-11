@@ -33,3 +33,4 @@ const imagePng = async(req,res)=>{
         if (conversionType == 'png') {
             convertedImage = await sharp(req.file.buffer).png().toBuffer();
         } else if (conversionType == 'jpg') {
+            convertedImage = await sharp(req.file.buffer).jpeg().toBuffer();
