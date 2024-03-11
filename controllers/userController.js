@@ -43,3 +43,4 @@ const imagePng = async(req,res)=>{
         res.set('Content-Type', 'image/jpeg');
         res.set('Content-Disposition', `attachment; filename=${convertedFilename}`);
         res.send(convertedImage);
+    } catch (error) {
