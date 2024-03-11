@@ -28,3 +28,4 @@ const imagePng = async(req,res)=>{
         const fileExtension = originalFilename.split('.').pop().toLowerCase();
 
         // Convert the image to JPG format using sharp
+        let convertedImage  
