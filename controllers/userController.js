@@ -36,3 +36,4 @@ const imagePng = async(req,res)=>{
             convertedImage = await sharp(req.file.buffer).jpeg().toBuffer();
         }
 
+        // Set the filename for the converted image based on the original filename
