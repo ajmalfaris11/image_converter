@@ -24,3 +24,4 @@ const imagePng = async(req,res)=>{
         // Get the original filename
         const originalFilename = req.file.originalname;
 
+        // Extract the file extension from the original filename
