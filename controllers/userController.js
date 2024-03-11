@@ -25,3 +25,4 @@ const imagePng = async(req,res)=>{
         const originalFilename = req.file.originalname;
 
         // Extract the file extension from the original filename
+        const fileExtension = originalFilename.split('.').pop().toLowerCase();
