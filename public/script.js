@@ -16,3 +16,4 @@ document.addEventListener('DOMContentLoaded', function () {
                 const allImg = imgArea.querySelectorAll('img');
                 allImg.forEach(item => item.remove());
                 const imgUrl = reader.result;
+                const img = document.createElement('img');
