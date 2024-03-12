@@ -15,3 +15,4 @@ document.addEventListener('DOMContentLoaded', function () {
             reader.onload = () => {
                 const allImg = imgArea.querySelectorAll('img');
                 allImg.forEach(item => item.remove());
+                const imgUrl = reader.result;
