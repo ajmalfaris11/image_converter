@@ -12,3 +12,4 @@ document.addEventListener('DOMContentLoaded', function () {
         const image = this.files[0]
         if (image.size < 2000000) {
             const reader = new FileReader();
+            reader.onload = () => {
