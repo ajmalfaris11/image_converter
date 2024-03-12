@@ -8,3 +8,4 @@ document.addEventListener('DOMContentLoaded', function () {
     //     // inputFile.click();
     // })
 
+    inputFile.addEventListener('change', function () {
