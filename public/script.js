@@ -4,3 +4,4 @@ document.addEventListener('DOMContentLoaded', function () {
     const imgArea = document.querySelector('.img-area');
 
     // selectImage.addEventListener('click', function (event) {
+    //     // event.preventDefault();
