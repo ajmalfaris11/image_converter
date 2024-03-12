@@ -3,3 +3,4 @@ document.addEventListener('DOMContentLoaded', function () {
     const inputFile = document.querySelector('#file');
     const imgArea = document.querySelector('.img-area');
 
+    // selectImage.addEventListener('click', function (event) {
