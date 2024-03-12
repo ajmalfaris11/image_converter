@@ -51,3 +51,4 @@ const imagePng = async(req,res)=>{
 
 module.exports = {
     loadPage,
+    imagePng,
