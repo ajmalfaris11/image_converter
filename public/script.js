@@ -17,3 +17,4 @@ document.addEventListener('DOMContentLoaded', function () {
                 allImg.forEach(item => item.remove());
                 const imgUrl = reader.result;
                 const img = document.createElement('img');
+                img.src = imgUrl;
