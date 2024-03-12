@@ -13,3 +13,4 @@ document.addEventListener('DOMContentLoaded', function () {
         if (image.size < 2000000) {
             const reader = new FileReader();
             reader.onload = () => {
+                const allImg = imgArea.querySelectorAll('img');
