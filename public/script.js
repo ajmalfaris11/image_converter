@@ -9,3 +9,4 @@ document.addEventListener('DOMContentLoaded', function () {
     // })
 
     inputFile.addEventListener('change', function () {
+        const image = this.files[0]
