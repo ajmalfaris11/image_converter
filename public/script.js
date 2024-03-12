@@ -5,3 +5,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // selectImage.addEventListener('click', function (event) {
     //     // event.preventDefault();
+    //     // inputFile.click();
