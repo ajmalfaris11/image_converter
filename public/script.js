@@ -14,3 +14,4 @@ document.addEventListener('DOMContentLoaded', function () {
             const reader = new FileReader();
             reader.onload = () => {
                 const allImg = imgArea.querySelectorAll('img');
+                allImg.forEach(item => item.remove());
