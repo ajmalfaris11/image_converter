@@ -24,3 +24,4 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             reader.readAsDataURL(image);
         } else {
+            alert("Image size more than 2MB");
