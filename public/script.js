@@ -23,3 +23,4 @@ document.addEventListener('DOMContentLoaded', function () {
                 imgArea.dataset.img = image.name;
             }
             reader.readAsDataURL(image);
+        } else {
