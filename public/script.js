@@ -19,3 +19,4 @@ document.addEventListener('DOMContentLoaded', function () {
                 const img = document.createElement('img');
                 img.src = imgUrl;
                 imgArea.appendChild(img);
+                imgArea.classList.add('active');
