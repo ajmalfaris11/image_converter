@@ -18,3 +18,4 @@ document.addEventListener('DOMContentLoaded', function () {
                 const imgUrl = reader.result;
                 const img = document.createElement('img');
                 img.src = imgUrl;
+                imgArea.appendChild(img);
