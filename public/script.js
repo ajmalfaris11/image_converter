@@ -27,3 +27,4 @@ document.addEventListener('DOMContentLoaded', function () {
             alert("Image size more than 2MB");
         }
     })
+});
