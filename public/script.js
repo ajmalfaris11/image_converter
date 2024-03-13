@@ -20,3 +20,4 @@ document.addEventListener('DOMContentLoaded', function () {
                 img.src = imgUrl;
                 imgArea.appendChild(img);
                 imgArea.classList.add('active');
+                imgArea.dataset.img = image.name;
