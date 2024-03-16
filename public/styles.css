@@ -67,3 +67,4 @@ body {
 	object-position: center;
 	z-index: 100;
 }
+.img-area::before {
