@@ -68,3 +68,4 @@ body {
 	z-index: 100;
 }
 .img-area::before {
+	content: attr(data-img);
