@@ -69,3 +69,4 @@ body {
 }
 .img-area::before {
 	content: attr(data-img);
+	position: absolute;
