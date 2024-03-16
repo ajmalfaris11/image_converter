@@ -87,3 +87,4 @@ body {
 	z-index: 200;
 }
 .img-area.active:hover::before {
+	opacity: 1;
