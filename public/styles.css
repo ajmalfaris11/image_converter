@@ -83,3 +83,4 @@ body {
 	align-items: center;
 	pointer-events: none;
 	opacity: 0;
+	transition: all .3s ease;
