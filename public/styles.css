@@ -86,3 +86,4 @@ body {
 	transition: all .3s ease;
 	z-index: 200;
 }
+.img-area.active:hover::before {
