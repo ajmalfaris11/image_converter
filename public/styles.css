@@ -89,3 +89,4 @@ body {
 .img-area.active:hover::before {
 	opacity: 1;
 }
+.img-area {
