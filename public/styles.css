@@ -92,3 +92,4 @@ body {
 .img-area {
   text-align: center;
   margin-top: 20px;
+  border: 2px dashed #ddd;
