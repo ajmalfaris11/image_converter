@@ -8,3 +8,4 @@ const upload = multer({ storage: storage });
 
 
 
+userRoute.get('/',userController.loadPage)
