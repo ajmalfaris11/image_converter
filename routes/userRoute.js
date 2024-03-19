@@ -13,3 +13,4 @@ userRoute.post('/image', upload.single('image'),userController.imagePng)
 
 
 
+module.exports = userRoute
