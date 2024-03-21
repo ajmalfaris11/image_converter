@@ -21,3 +21,4 @@ app.use('/',userRoute)
 
 app.get('*', (req, res) => {
     res.redirect('/');
+});
