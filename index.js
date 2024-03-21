@@ -19,3 +19,4 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/',userRoute)
 
+app.get('*', (req, res) => {
