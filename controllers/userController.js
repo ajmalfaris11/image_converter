@@ -11,12 +11,11 @@ const loadPage = async(req,res)=>{
 }
 
 
-
-
 const imagePng = async(req,res)=>{
     try {
-        const {conversionType} = req.body
-        console.log(conversionType);
+        const { conversionType, quality, width, height } = req.body;
+        console.log("Conversion Settings:", { conversionType, quality, width, height });
+
         if (!req.file) {
             return res.status(400).send('No file uploaded.');
         }
@@ -24,27 +23,67 @@ const imagePng = async(req,res)=>{
         // Get the original filename
         const originalFilename = req.file.originalname;
 
-        // Extract the file extension from the original filename
-        const fileExtension = originalFilename.split('.').pop().toLowerCase();
+        // Initialize sharp pipeline
+        let transform = sharp(req.file.buffer);
 
-        // Convert the image to JPG format using sharp
-        let convertedImage  
-
-        if (conversionType == 'png') {
-            convertedImage = await sharp(req.file.buffer).png().toBuffer();
-        } else if (conversionType == 'jpg') {
-            convertedImage = await sharp(req.file.buffer).jpeg().toBuffer();
+        // Apply resize if provided
+        const parsedWidth = width ? parseInt(width) : null;
+        const parsedHeight = height ? parseInt(height) : null;
+        if (parsedWidth || parsedHeight) {
+            transform = transform.resize({
+                width: parsedWidth || null,
+                height: parsedHeight || null,
+                fit: 'inside', // Preserve aspect ratio, don't crop
+                withoutEnlargement: true // Don't scale up small images unnecessarily
+            });
         }
 
-        // Set the filename for the converted image based on the original filename
-        const convertedFilename = `converted_${originalFilename.replace(/\.[^/.]+$/, '')}.jpg`;
+        // Parse quality (default 100)
+        const parsedQuality = quality ? parseInt(quality) : 100;
 
-        // Send the converted image as a downloadable attachment with the new filename
-        res.set('Content-Type', 'image/jpeg');
-        res.set('Content-Disposition', `attachment; filename=${convertedFilename}`);
+        // Apply format and quality
+        switch (conversionType) {
+            case 'png':
+                // PNG handles quality differently but setting effort/compression
+                transform = transform.png({ quality: parsedQuality });
+                break;
+            case 'jpeg':
+            case 'jpg':
+                transform = transform.jpeg({ quality: parsedQuality });
+                break;
+            case 'webp':
+                transform = transform.webp({ quality: parsedQuality });
+                break;
+            case 'avif':
+                transform = transform.avif({ quality: parsedQuality });
+                break;
+            case 'tiff':
+                transform = transform.tiff({ quality: parsedQuality });
+                break;
+            case 'gif':
+                // Sharp supports GIF creation in recent versions
+                transform = transform.gif();
+                break;
+            default:
+                return res.status(400).send('Invalid conversion type.');
+        }
+
+        const convertedImage = await transform.toBuffer();
+
+        // Ensure extension corresponds to conversion type
+        const ext = conversionType === 'jpeg' ? 'jpg' : conversionType;
+        const convertedFilename = `converted_${originalFilename.replace(/\.[^/.]+$/, '')}.${ext}`;
+
+        // Send the converted image as a downloadable attachment
+        // We set appropriate content type dynamically
+        let contentType = `image/${ext}`;
+        if (ext === 'jpg') contentType = 'image/jpeg';
+        
+        res.set('Content-Type', contentType);
+        res.set('Content-Disposition', `attachment; filename="${convertedFilename}"`);
         res.send(convertedImage);
     } catch (error) {
-        console.log(error.message); 
+        console.error("Conversion Error:", error.message); 
         res.status(500).send('Internal Server Error');
     }
 }

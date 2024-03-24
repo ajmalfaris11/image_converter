@@ -1,45 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Converter</title>
-   
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+    <title>Advanced Image Converter</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- BoxIcons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
+<body>
 
-<body class="bg-light">
+    <div class="app-container">
+        <!-- Floating shapes for aesthetic background -->
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
 
-    <div class="container mt-5">
-        <h2 class="text-center mb-3">Image Converter</h2>
-        <form action="/image" method="post" enctype="multipart/form-data">
-            <input type="file" id="file" accept="image/*" name="image" hidden required>
-            <div class="img-area" data-img="">
-                <i class='bx bxs-cloud-upload icon'></i>
-                <a style="text-decoration: none;" class="select-image" href="javascript:void(0);" onclick="document.getElementById('file').click();">
-                    <h3>Upload Image</h3>
-                </a>
-                <p>Image size must be less than <span>2MB</span></p>
+        <div class="glass-card main-card">
+            <header>
+                <h2>Image Converter</h2>
+                <p>Convert, compress, and resize with ease.</p>
+            </header>
+
+            <form action="/image" method="post" enctype="multipart/form-data" id="converterForm">
+                
+                <input type="file" id="file" accept="image/*" name="image" hidden required>
+                
+                <!-- Dropzone Area -->
+                <div class="dropzone" id="dropzone">
+                    <i class='bx bx-cloud-upload icon'></i>
+                    <a href="javascript:void(0);" class="select-btn" onclick="document.getElementById('file').click();">
+                        Click to Upload or Drag & Drop
+                    </a>
+                    <p class="file-info">Supported formats: PNG, JPG, WEBP, GIF</p>
+                </div>
+
+                <!-- Settings Panel -->
+                <div class="settings-panel">
+                    
+                    <div class="form-group">
+                        <label for="conversionType"><i class='bx bx-refresh'></i> Output Format</label>
+                        <select class="custom-select" id="conversionType" name="conversionType" required>
+                            <option value="png">PNG (Lossless)</option>
+                            <option value="jpg">JPEG (Lossy)</option>
+                            <option value="webp">WEBP (Optimized)</option>
+                            <option value="avif">AVIF (Next-Gen)</option>
+                            <option value="tiff">TIFF (High Quality)</option>
+                            <option value="gif">GIF</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group slider-group">
+                        <div class="slider-header">
+                            <label for="quality"><i class='bx bx-slider-alt'></i> Quality</label>
+                            <span id="qualityVal">90%</span>
+                        </div>
+                        <input type="range" class="custom-slider" id="quality" name="quality" min="1" max="100" value="90">
+                    </div>
+
+                    <div class="form-group dimensions-group">
+                        <label><i class='bx bx-crop'></i> Resize (Optional)</label>
+                        <div class="dimensions-inputs">
+                            <input type="number" name="width" id="width" placeholder="Width (px)">
+                            <span>×</span>
+                            <input type="number" name="height" id="height" placeholder="Height (px)">
+                        </div>
+                        <small class="hint">Leave blank to keep original size.</small>
+                    </div>
+                    
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-primary" id="convertBtn">
+                    <span>Convert Image</span>
+                    <i class='bx bx-right-arrow-alt'></i>
+                </button>
+
+            </form>
+
+            <!-- Loading overlay -->
+            <div class="loading-overlay" id="loadingOverlay">
+                <div class="spinner"></div>
+                <p>Processing Image...</p>
             </div>
-
-            <div class="mb-3">
-                <label for="conversionType" class="form-label">Choose Conversion Type</label>
-                <select class="form-control" id="conversionType" name="conversionType" required>
-                    <option value="png">PNG</option>
-                    <option value="jpg">JPEG</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary convert-btn">Convert</button>
-        </form>
+            
+        </div>
     </div>
 
-    <!-- Include Bootstrap JS (optional, if you need JavaScript features) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
