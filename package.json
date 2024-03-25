@@ -11,3 +11,4 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "next": "^16.2.10",
