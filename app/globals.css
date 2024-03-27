@@ -12,3 +12,4 @@
     --dropzone-hover: rgba(255, 255, 255, 0.8);
     --radius-lg: 24px;
     --radius-md: 16px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
