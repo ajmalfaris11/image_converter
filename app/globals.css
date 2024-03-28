@@ -34,3 +34,4 @@ body {
 
 /* Background Animated Blobs */
 .app-container {
+    position: relative;
