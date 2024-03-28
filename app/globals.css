@@ -24,3 +24,4 @@
 
 body {
     background: var(--bg-gradient);
+    min-height: 100vh;
