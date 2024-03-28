@@ -28,3 +28,4 @@ body {
     color: var(--text-main);
     display: flex;
     justify-content: center;
+    align-items: center;
