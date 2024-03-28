@@ -27,3 +27,4 @@ body {
     min-height: 100vh;
     color: var(--text-main);
     display: flex;
+    justify-content: center;
