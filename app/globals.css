@@ -46,3 +46,4 @@ body {
 .blob {
     position: absolute;
     filter: blur(80px);
+    z-index: -1;
