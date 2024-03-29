@@ -45,3 +45,4 @@ body {
 
 .blob {
     position: absolute;
+    filter: blur(80px);
