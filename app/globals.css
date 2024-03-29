@@ -47,3 +47,4 @@ body {
     position: absolute;
     filter: blur(80px);
     z-index: -1;
+    border-radius: 50%;
