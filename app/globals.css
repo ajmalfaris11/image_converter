@@ -48,3 +48,4 @@ body {
     filter: blur(80px);
     z-index: -1;
     border-radius: 50%;
+    opacity: 0.6;
