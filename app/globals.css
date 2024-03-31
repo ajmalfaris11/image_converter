@@ -79,3 +79,4 @@ body {
 }
 
 @keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
