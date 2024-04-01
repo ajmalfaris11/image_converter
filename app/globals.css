@@ -92,3 +92,4 @@ body {
     box-shadow: var(--glass-shadow);
     border-radius: var(--radius-lg);
     padding: 40px;
+    width: 100%;
