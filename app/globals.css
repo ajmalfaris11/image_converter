@@ -85,3 +85,4 @@ body {
 
 /* Glassmorphism Card */
 .glass-card {
+    background: var(--glass-bg);
