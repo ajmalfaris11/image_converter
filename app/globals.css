@@ -88,3 +88,4 @@ body {
     background: var(--glass-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
