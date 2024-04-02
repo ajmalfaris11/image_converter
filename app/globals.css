@@ -108,3 +108,4 @@ header h2 {
     font-weight: 700;
     margin-bottom: 8px;
     background: linear-gradient(to right, #4f46e5, #ec4899);
+    -webkit-background-clip: text;
