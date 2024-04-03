@@ -121,3 +121,4 @@ header p {
 .dropzone {
     width: 100%;
     height: 200px;
+    background: var(--dropzone-bg);
