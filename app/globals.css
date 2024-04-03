@@ -125,3 +125,4 @@ header p {
     border: 2px dashed var(--dropzone-border);
     border-radius: var(--radius-md);
     display: flex;
+    flex-direction: column;
