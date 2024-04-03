@@ -126,3 +126,4 @@ header p {
     border-radius: var(--radius-md);
     display: flex;
     flex-direction: column;
+    justify-content: center;
