@@ -135,3 +135,4 @@ header p {
     overflow: hidden;
 }
 
+.dropzone:hover, .dropzone.active {
