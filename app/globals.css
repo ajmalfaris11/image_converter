@@ -132,3 +132,4 @@ header p {
     transition: var(--transition);
     position: relative;
     cursor: pointer;
+    overflow: hidden;
