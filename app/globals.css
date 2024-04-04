@@ -131,3 +131,4 @@ header p {
     margin-bottom: 25px;
     transition: var(--transition);
     position: relative;
+    cursor: pointer;
