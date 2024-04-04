@@ -136,3 +136,4 @@ header p {
 }
 
 .dropzone:hover, .dropzone.active {
+    background: var(--dropzone-hover);
