@@ -130,3 +130,4 @@ header p {
     align-items: center;
     margin-bottom: 25px;
     transition: var(--transition);
+    position: relative;
