@@ -147,3 +147,4 @@ header p {
     transition: var(--transition);
 }
 
+.dropzone:hover .icon {
