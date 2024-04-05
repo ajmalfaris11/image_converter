@@ -144,3 +144,4 @@ header p {
     font-size: 50px;
     color: var(--primary);
     margin-bottom: 10px;
+    transition: var(--transition);
