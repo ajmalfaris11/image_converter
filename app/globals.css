@@ -153,3 +153,4 @@ header p {
 
 .select-btn {
     text-decoration: none;
+    color: var(--text-main);
