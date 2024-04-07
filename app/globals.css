@@ -179,3 +179,4 @@ header p {
 .settings-panel {
     display: flex;
     flex-direction: column;
+    gap: 20px;
