@@ -178,3 +178,4 @@ header p {
 /* Settings Panel */
 .settings-panel {
     display: flex;
+    flex-direction: column;
