@@ -177,3 +177,4 @@ header p {
 
 /* Settings Panel */
 .settings-panel {
+    display: flex;
