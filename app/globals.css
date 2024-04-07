@@ -172,3 +172,4 @@ header p {
     height: 100%;
     object-fit: contain;
     background: rgba(255, 255, 255, 0.9);
+    z-index: 10;
