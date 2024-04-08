@@ -198,3 +198,4 @@ header p {
 }
 
 .custom-select, .dimensions-inputs input {
+    width: 100%;
