@@ -205,3 +205,4 @@ header p {
     background: rgba(255, 255, 255, 0.7);
     color: var(--text-main);
     font-size: 15px;
+    outline: none;
