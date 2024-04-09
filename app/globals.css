@@ -207,3 +207,4 @@ header p {
     font-size: 15px;
     outline: none;
     transition: var(--transition);
+    appearance: none;
