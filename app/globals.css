@@ -206,3 +206,4 @@ header p {
     color: var(--text-main);
     font-size: 15px;
     outline: none;
+    transition: var(--transition);
