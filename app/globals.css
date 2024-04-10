@@ -226,3 +226,4 @@ header p {
 /* Range Slider */
 .slider-header {
     display: flex;
+    justify-content: space-between;
