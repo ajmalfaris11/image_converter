@@ -219,3 +219,4 @@ header p {
 
 .custom-select:focus, .dimensions-inputs input:focus {
     border-color: var(--primary);
+    background: #fff;
