@@ -235,3 +235,4 @@ header p {
     font-weight: 600;
     color: var(--primary);
     background: rgba(99, 102, 241, 0.1);
+    padding: 2px 8px;
