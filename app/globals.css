@@ -236,3 +236,4 @@ header p {
     color: var(--primary);
     background: rgba(99, 102, 241, 0.1);
     padding: 2px 8px;
+    border-radius: 20px;
