@@ -234,3 +234,4 @@ header p {
     font-size: 13px;
     font-weight: 600;
     color: var(--primary);
+    background: rgba(99, 102, 241, 0.1);
