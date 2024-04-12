@@ -248,3 +248,4 @@ header p {
     outline: none;
 }
 
+.custom-slider::-webkit-slider-thumb {
