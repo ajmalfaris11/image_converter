@@ -256,3 +256,4 @@ header p {
     border-radius: 50%;
     background: var(--primary);
     cursor: pointer;
+    transition: var(--transition);
