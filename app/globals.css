@@ -249,3 +249,4 @@ header p {
 }
 
 .custom-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
