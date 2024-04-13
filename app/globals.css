@@ -268,3 +268,4 @@ header p {
 .dimensions-inputs {
     display: flex;
     align-items: center;
+    gap: 10px;
