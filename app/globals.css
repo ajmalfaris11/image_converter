@@ -266,3 +266,4 @@ header p {
 
 /* Dimensions Group */
 .dimensions-inputs {
+    display: flex;
