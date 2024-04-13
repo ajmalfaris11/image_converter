@@ -273,3 +273,4 @@ header p {
 
 .dimensions-inputs span {
     color: var(--text-muted);
+    font-weight: 600;
