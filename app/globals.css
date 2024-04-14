@@ -289,3 +289,4 @@ header p {
     border: none;
     border-radius: var(--radius-md);
     background: linear-gradient(135deg, var(--primary), #8b5cf6);
+    color: white;
