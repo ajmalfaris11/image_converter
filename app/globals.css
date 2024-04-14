@@ -278,3 +278,4 @@ header p {
 
 .hint {
     font-size: 12px;
+    color: var(--text-muted);
