@@ -288,3 +288,4 @@ header p {
     padding: 16px;
     border: none;
     border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--primary), #8b5cf6);
