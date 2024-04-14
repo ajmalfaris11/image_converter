@@ -287,3 +287,4 @@ header p {
     width: 100%;
     padding: 16px;
     border: none;
+    border-radius: var(--radius-md);
