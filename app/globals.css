@@ -297,3 +297,4 @@ header p {
     justify-content: center;
     align-items: center;
     gap: 8px;
+    transition: var(--transition);
