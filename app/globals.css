@@ -307,3 +307,4 @@ header p {
 }
 
 .btn-primary:active {
+    transform: translateY(1px);
