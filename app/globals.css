@@ -315,3 +315,4 @@ header p {
     transition: var(--transition);
 }
 
+.btn-primary:hover i {
