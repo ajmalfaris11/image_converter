@@ -316,3 +316,4 @@ header p {
 }
 
 .btn-primary:hover i {
+    transform: translateX(4px);
