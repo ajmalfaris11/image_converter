@@ -335,3 +335,4 @@ header p {
     align-items: center;
     z-index: 1000;
     opacity: 0;
+    pointer-events: none;
