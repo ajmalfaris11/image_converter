@@ -331,3 +331,4 @@ header p {
     -webkit-backdrop-filter: blur(8px);
     display: flex;
     flex-direction: column;
+    justify-content: center;
