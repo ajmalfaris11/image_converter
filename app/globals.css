@@ -322,3 +322,4 @@ header p {
 /* Loading Overlay */
 .loading-overlay {
     position: absolute;
+    top: 0;
