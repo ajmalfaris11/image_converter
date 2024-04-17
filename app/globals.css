@@ -336,3 +336,4 @@ header p {
     z-index: 1000;
     opacity: 0;
     pointer-events: none;
+    transition: var(--transition);
