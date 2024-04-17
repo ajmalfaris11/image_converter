@@ -330,3 +330,4 @@ header p {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     display: flex;
+    flex-direction: column;
