@@ -339,3 +339,4 @@ header p {
     transition: var(--transition);
 }
 
+.loading-overlay.active {
