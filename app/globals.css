@@ -351,3 +351,4 @@ header p {
     border-top: 4px solid var(--primary);
     border-radius: 50%;
     animation: spin 1s linear infinite;
+    margin-bottom: 16px;
