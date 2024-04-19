@@ -5,3 +5,4 @@ export const metadata = {
   description: 'Convert, compress, and resize with ease.',
 }
 
+export default function RootLayout({ children }) {
