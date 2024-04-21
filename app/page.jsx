@@ -16,3 +16,4 @@ export default function Home() {
         alert('Please upload an image file.')
         return
     }
+    setFile(selectedFile)
