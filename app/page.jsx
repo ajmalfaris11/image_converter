@@ -11,3 +11,4 @@ export default function Home() {
   
   const fileInputRef = useRef(null)
 
+  const handleFile = (selectedFile) => {
