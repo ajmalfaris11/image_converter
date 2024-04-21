@@ -9,3 +9,4 @@ export default function Home() {
   const [loading, setLoading] = useState(false)
   const [isDragActive, setIsDragActive] = useState(false)
   
+  const fileInputRef = useRef(null)
