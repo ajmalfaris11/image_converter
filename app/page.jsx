@@ -15,3 +15,4 @@ export default function Home() {
     if (!selectedFile.type.startsWith('image/')) {
         alert('Please upload an image file.')
         return
+    }
