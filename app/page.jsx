@@ -19,3 +19,4 @@ export default function Home() {
     setFile(selectedFile)
 
     const reader = new FileReader()
+    reader.onload = (e) => {
