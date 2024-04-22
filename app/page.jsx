@@ -24,3 +24,4 @@ export default function Home() {
     }
     reader.readAsDataURL(selectedFile)
   }
+
