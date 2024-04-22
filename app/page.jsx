@@ -22,3 +22,4 @@ export default function Home() {
     reader.onload = (e) => {
         setPreview(e.target.result)
     }
+    reader.readAsDataURL(selectedFile)
