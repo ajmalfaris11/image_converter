@@ -23,3 +23,4 @@ export default function Home() {
         setPreview(e.target.result)
     }
     reader.readAsDataURL(selectedFile)
+  }
