@@ -27,3 +27,4 @@ export default function Home() {
 
   const onDragEnter = (e) => {
     e.preventDefault()
+    e.stopPropagation()
