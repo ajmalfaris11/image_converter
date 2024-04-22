@@ -21,3 +21,4 @@ export default function Home() {
     const reader = new FileReader()
     reader.onload = (e) => {
         setPreview(e.target.result)
+    }
