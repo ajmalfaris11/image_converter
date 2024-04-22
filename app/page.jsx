@@ -31,3 +31,4 @@ export default function Home() {
     setIsDragActive(true)
   }
   const onDragLeave = (e) => {
+    e.preventDefault()
