@@ -46,3 +46,4 @@ export default function Home() {
     setIsDragActive(false)
     if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
       handleFile(e.dataTransfer.files[0])
+    }
