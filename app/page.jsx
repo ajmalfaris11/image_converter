@@ -47,3 +47,4 @@ export default function Home() {
     if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
       handleFile(e.dataTransfer.files[0])
     }
+  }
