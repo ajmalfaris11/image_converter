@@ -35,3 +35,4 @@ export default function Home() {
     e.stopPropagation()
     setIsDragActive(false)
   }
+  const onDragOver = (e) => {
