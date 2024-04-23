@@ -44,3 +44,4 @@ export default function Home() {
     e.preventDefault()
     e.stopPropagation()
     setIsDragActive(false)
+    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
