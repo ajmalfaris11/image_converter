@@ -39,3 +39,4 @@ export default function Home() {
     e.preventDefault()
     e.stopPropagation()
     setIsDragActive(true)
+  }
