@@ -37,3 +37,4 @@ export default function Home() {
   }
   const onDragOver = (e) => {
     e.preventDefault()
+    e.stopPropagation()
