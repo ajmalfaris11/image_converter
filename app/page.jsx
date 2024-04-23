@@ -36,3 +36,4 @@ export default function Home() {
     setIsDragActive(false)
   }
   const onDragOver = (e) => {
+    e.preventDefault()
