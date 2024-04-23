@@ -40,3 +40,4 @@ export default function Home() {
     e.stopPropagation()
     setIsDragActive(true)
   }
+  const onDrop = (e) => {
