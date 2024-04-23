@@ -43,3 +43,4 @@ export default function Home() {
   const onDrop = (e) => {
     e.preventDefault()
     e.stopPropagation()
+    setIsDragActive(false)
