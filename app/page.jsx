@@ -53,3 +53,4 @@ export default function Home() {
     e.preventDefault()
     if (!file) {
       alert('Please select an image first.')
+      return
