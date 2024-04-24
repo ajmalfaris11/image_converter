@@ -51,3 +51,4 @@ export default function Home() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (!file) {
