@@ -58,3 +58,4 @@ export default function Home() {
 
     setLoading(true)
 
+    try {
