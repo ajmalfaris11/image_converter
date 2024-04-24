@@ -55,3 +55,4 @@ export default function Home() {
       alert('Please select an image first.')
       return
     }
+
