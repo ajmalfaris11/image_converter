@@ -59,3 +59,4 @@ export default function Home() {
     setLoading(true)
 
     try {
+        const data = new FormData()
