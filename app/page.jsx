@@ -61,3 +61,4 @@ export default function Home() {
     try {
         const data = new FormData()
         data.append('image', file)
+        data.append('conversionType', e.target.conversionType.value)
