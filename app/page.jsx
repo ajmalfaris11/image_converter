@@ -48,3 +48,4 @@ export default function Home() {
       handleFile(e.dataTransfer.files[0])
     }
   }
+
