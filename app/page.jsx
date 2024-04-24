@@ -54,3 +54,4 @@ export default function Home() {
     if (!file) {
       alert('Please select an image first.')
       return
+    }
