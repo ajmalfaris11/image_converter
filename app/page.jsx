@@ -56,3 +56,4 @@ export default function Home() {
       return
     }
 
+    setLoading(true)
