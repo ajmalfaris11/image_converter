@@ -66,3 +66,4 @@ export default function Home() {
         data.append('width', e.target.width.value)
         data.append('height', e.target.height.value)
 
+        const response = await fetch('/api/image', {
