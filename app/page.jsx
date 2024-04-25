@@ -64,3 +64,4 @@ export default function Home() {
         data.append('conversionType', e.target.conversionType.value)
         data.append('quality', quality)
         data.append('width', e.target.width.value)
+        data.append('height', e.target.height.value)
