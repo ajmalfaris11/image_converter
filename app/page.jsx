@@ -67,3 +67,4 @@ export default function Home() {
         data.append('height', e.target.height.value)
 
         const response = await fetch('/api/image', {
+            method: 'POST',
