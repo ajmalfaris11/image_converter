@@ -76,3 +76,4 @@ export default function Home() {
             throw new Error(text || 'Conversion failed')
         }
 
+        const blob = await response.blob()
