@@ -72,3 +72,4 @@ export default function Home() {
         })
 
         if (!response.ok) {
+            const text = await response.text()
