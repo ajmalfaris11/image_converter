@@ -74,3 +74,4 @@ export default function Home() {
         if (!response.ok) {
             const text = await response.text()
             throw new Error(text || 'Conversion failed')
+        }
