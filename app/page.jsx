@@ -77,3 +77,4 @@ export default function Home() {
         }
 
         const blob = await response.blob()
+        const downloadUrl = window.URL.createObjectURL(blob)
