@@ -68,3 +68,4 @@ export default function Home() {
 
         const response = await fetch('/api/image', {
             method: 'POST',
+            body: data
