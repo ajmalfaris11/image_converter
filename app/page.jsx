@@ -71,3 +71,4 @@ export default function Home() {
             body: data
         })
 
+        if (!response.ok) {
