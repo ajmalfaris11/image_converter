@@ -63,3 +63,4 @@ export default function Home() {
         data.append('image', file)
         data.append('conversionType', e.target.conversionType.value)
         data.append('quality', quality)
+        data.append('width', e.target.width.value)
