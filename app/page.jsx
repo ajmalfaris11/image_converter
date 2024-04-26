@@ -87,3 +87,4 @@ export default function Home() {
                 filename = matches[1].replace(/['"]/g, '')
             }
         } else {
+            const type = e.target.conversionType.value
