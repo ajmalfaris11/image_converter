@@ -90,3 +90,4 @@ export default function Home() {
             const type = e.target.conversionType.value
             const ext = type === 'jpeg' ? 'jpg' : type
             filename += `.${ext}`
+        }
