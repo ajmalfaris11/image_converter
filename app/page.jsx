@@ -80,3 +80,4 @@ export default function Home() {
         const downloadUrl = window.URL.createObjectURL(blob)
         
         let filename = 'converted_image'
+        const disposition = response.headers.get('Content-Disposition')
