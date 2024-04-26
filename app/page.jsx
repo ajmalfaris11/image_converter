@@ -83,3 +83,4 @@ export default function Home() {
         const disposition = response.headers.get('Content-Disposition')
         if (disposition && disposition.indexOf('filename=') !== -1) {
             const matches = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/.exec(disposition)
+            if (matches != null && matches[1]) { 
