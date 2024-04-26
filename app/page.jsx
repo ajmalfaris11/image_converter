@@ -91,3 +91,4 @@ export default function Home() {
             const ext = type === 'jpeg' ? 'jpg' : type
             filename += `.${ext}`
         }
+
