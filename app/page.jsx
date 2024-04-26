@@ -82,3 +82,4 @@ export default function Home() {
         let filename = 'converted_image'
         const disposition = response.headers.get('Content-Disposition')
         if (disposition && disposition.indexOf('filename=') !== -1) {
+            const matches = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/.exec(disposition)
