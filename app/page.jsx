@@ -84,3 +84,4 @@ export default function Home() {
         if (disposition && disposition.indexOf('filename=') !== -1) {
             const matches = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/.exec(disposition)
             if (matches != null && matches[1]) { 
+                filename = matches[1].replace(/['"]/g, '')
