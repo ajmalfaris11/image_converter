@@ -104,3 +104,4 @@ export default function Home() {
         
     } catch (error) {
         console.error(error)
+        alert(`Error: ${error.message}`)
