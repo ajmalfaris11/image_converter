@@ -97,3 +97,4 @@ export default function Home() {
         a.href = downloadUrl
         a.download = filename
         document.body.appendChild(a)
+        a.click()
