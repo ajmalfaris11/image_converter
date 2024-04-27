@@ -99,3 +99,4 @@ export default function Home() {
         document.body.appendChild(a)
         a.click()
         
+        window.URL.revokeObjectURL(downloadUrl)
