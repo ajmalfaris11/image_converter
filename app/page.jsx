@@ -107,3 +107,4 @@ export default function Home() {
         alert(`Error: ${error.message}`)
     } finally {
         setLoading(false)
+    }
