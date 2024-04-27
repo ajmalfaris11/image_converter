@@ -103,3 +103,4 @@ export default function Home() {
         a.remove()
         
     } catch (error) {
+        console.error(error)
