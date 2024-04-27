@@ -106,3 +106,4 @@ export default function Home() {
         console.error(error)
         alert(`Error: ${error.message}`)
     } finally {
+        setLoading(false)
