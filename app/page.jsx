@@ -100,3 +100,4 @@ export default function Home() {
         a.click()
         
         window.URL.revokeObjectURL(downloadUrl)
+        a.remove()
