@@ -93,3 +93,4 @@ export default function Home() {
         }
 
         const a = document.createElement('a')
+        a.style.display = 'none'
