@@ -121,3 +121,4 @@ export default function Home() {
                 <h2>Image Converter</h2>
                 <p>Convert, compress, and resize with ease.</p>
             </header>
+
