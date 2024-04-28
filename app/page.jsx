@@ -122,3 +122,4 @@ export default function Home() {
                 <p>Convert, compress, and resize with ease.</p>
             </header>
 
+            <form onSubmit={handleSubmit} id="converterForm">
