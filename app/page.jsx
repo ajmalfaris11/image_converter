@@ -113,3 +113,4 @@ export default function Home() {
   return (
     <div className="app-container">
         <div className="blob blob-1"></div>
+        <div className="blob blob-2"></div>
