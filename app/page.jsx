@@ -118,3 +118,4 @@ export default function Home() {
 
         <div className="glass-card main-card">
             <header>
+                <h2>Image Converter</h2>
