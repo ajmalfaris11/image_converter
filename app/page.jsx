@@ -117,3 +117,4 @@ export default function Home() {
         <div className="blob blob-3"></div>
 
         <div className="glass-card main-card">
+            <header>
