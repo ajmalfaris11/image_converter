@@ -136,3 +136,4 @@ export default function Home() {
                       handleFile(e.target.files[0])
                     }
                   }}
+                />
