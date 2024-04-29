@@ -128,3 +128,4 @@ export default function Home() {
                   type="file" 
                   id="file" 
                   accept="image/*" 
+                  name="image" 
