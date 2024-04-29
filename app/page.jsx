@@ -131,3 +131,4 @@ export default function Home() {
                   name="image" 
                   hidden 
                   ref={fileInputRef}
+                  onChange={(e) => {
