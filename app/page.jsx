@@ -135,3 +135,4 @@ export default function Home() {
                     if (e.target.files && e.target.files.length > 0) {
                       handleFile(e.target.files[0])
                     }
+                  }}
