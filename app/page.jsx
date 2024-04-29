@@ -132,3 +132,4 @@ export default function Home() {
                   hidden 
                   ref={fileInputRef}
                   onChange={(e) => {
+                    if (e.target.files && e.target.files.length > 0) {
