@@ -129,3 +129,4 @@ export default function Home() {
                   id="file" 
                   accept="image/*" 
                   name="image" 
+                  hidden 
