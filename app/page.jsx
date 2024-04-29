@@ -130,3 +130,4 @@ export default function Home() {
                   accept="image/*" 
                   name="image" 
                   hidden 
+                  ref={fileInputRef}
