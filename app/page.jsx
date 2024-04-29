@@ -126,3 +126,4 @@ export default function Home() {
                 
                 <input 
                   type="file" 
+                  id="file" 
