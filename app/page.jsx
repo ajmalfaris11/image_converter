@@ -133,3 +133,4 @@ export default function Home() {
                   ref={fileInputRef}
                   onChange={(e) => {
                     if (e.target.files && e.target.files.length > 0) {
+                      handleFile(e.target.files[0])
