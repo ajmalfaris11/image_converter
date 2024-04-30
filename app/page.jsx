@@ -141,3 +141,4 @@ export default function Home() {
                 <div 
                   className={`dropzone ${isDragActive ? 'active' : ''}`} 
                   id="dropzone"
+                  onDragEnter={onDragEnter}
