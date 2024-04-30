@@ -151,3 +151,4 @@ export default function Home() {
                     ) : (
                       <>
                         <i className='bx bx-cloud-upload icon'></i>
+                        <a href="javascript:void(0);" className="select-btn" onClick={() => fileInputRef.current.click()}>
