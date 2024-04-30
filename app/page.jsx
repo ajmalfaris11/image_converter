@@ -143,3 +143,4 @@ export default function Home() {
                   id="dropzone"
                   onDragEnter={onDragEnter}
                   onDragLeave={onDragLeave}
+                  onDragOver={onDragOver}
