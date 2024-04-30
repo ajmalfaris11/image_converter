@@ -145,3 +145,4 @@ export default function Home() {
                   onDragLeave={onDragLeave}
                   onDragOver={onDragOver}
                   onDrop={onDrop}
+                >
