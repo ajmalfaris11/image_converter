@@ -146,3 +146,4 @@ export default function Home() {
                   onDragOver={onDragOver}
                   onDrop={onDrop}
                 >
+                    {preview ? (
