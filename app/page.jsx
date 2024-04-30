@@ -142,3 +142,4 @@ export default function Home() {
                   className={`dropzone ${isDragActive ? 'active' : ''}`} 
                   id="dropzone"
                   onDragEnter={onDragEnter}
+                  onDragLeave={onDragLeave}
