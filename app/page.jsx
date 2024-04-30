@@ -148,3 +148,4 @@ export default function Home() {
                 >
                     {preview ? (
                       <img src={preview} alt="Preview" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'contain', background: 'rgba(255, 255, 255, 0.9)', zIndex: 10 }} />
+                    ) : (
