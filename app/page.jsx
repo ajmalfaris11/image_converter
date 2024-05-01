@@ -165,3 +165,4 @@ export default function Home() {
                         <select className="custom-select" id="conversionType" name="conversionType" required defaultValue="png">
                             <option value="png">PNG (Lossless)</option>
                             <option value="jpg">JPEG (Lossy)</option>
+                            <option value="webp">WEBP (Optimized)</option>
