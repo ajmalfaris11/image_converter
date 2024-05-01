@@ -154,3 +154,4 @@ export default function Home() {
                         <a href="javascript:void(0);" className="select-btn" onClick={() => fileInputRef.current.click()}>
                             Click to Upload or Drag & Drop
                         </a>
+                        <p className="file-info">Supported formats: PNG, JPG, WEBP, GIF</p>
