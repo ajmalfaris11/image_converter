@@ -160,3 +160,4 @@ export default function Home() {
                 </div>
 
                 <div className="settings-panel">
+                    <div className="form-group">
