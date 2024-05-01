@@ -166,3 +166,4 @@ export default function Home() {
                             <option value="png">PNG (Lossless)</option>
                             <option value="jpg">JPEG (Lossy)</option>
                             <option value="webp">WEBP (Optimized)</option>
+                            <option value="avif">AVIF (Next-Gen)</option>
