@@ -155,3 +155,4 @@ export default function Home() {
                             Click to Upload or Drag & Drop
                         </a>
                         <p className="file-info">Supported formats: PNG, JPG, WEBP, GIF</p>
+                      </>
