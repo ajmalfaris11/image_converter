@@ -157,3 +157,4 @@ export default function Home() {
                         <p className="file-info">Supported formats: PNG, JPG, WEBP, GIF</p>
                       </>
                     )}
+                </div>
