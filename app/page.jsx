@@ -161,3 +161,4 @@ export default function Home() {
 
                 <div className="settings-panel">
                     <div className="form-group">
+                        <label htmlFor="conversionType"><i className='bx bx-refresh'></i> Output Format</label>
