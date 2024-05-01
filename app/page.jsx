@@ -163,3 +163,4 @@ export default function Home() {
                     <div className="form-group">
                         <label htmlFor="conversionType"><i className='bx bx-refresh'></i> Output Format</label>
                         <select className="custom-select" id="conversionType" name="conversionType" required defaultValue="png">
+                            <option value="png">PNG (Lossless)</option>
