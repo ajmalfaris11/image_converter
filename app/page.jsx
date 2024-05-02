@@ -172,3 +172,4 @@ export default function Home() {
                         </select>
                     </div>
 
+                    <div className="form-group slider-group">
