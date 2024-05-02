@@ -175,3 +175,4 @@ export default function Home() {
                     <div className="form-group slider-group">
                         <div className="slider-header">
                             <label htmlFor="quality"><i className='bx bx-slider-alt'></i> Quality</label>
+                            <span id="qualityVal">{quality}%</span>
