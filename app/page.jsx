@@ -182,3 +182,4 @@ export default function Home() {
                           className="custom-slider" 
                           id="quality" 
                           name="quality" 
+                          min="1" 
