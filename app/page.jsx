@@ -180,3 +180,4 @@ export default function Home() {
                         <input 
                           type="range" 
                           className="custom-slider" 
+                          id="quality" 
