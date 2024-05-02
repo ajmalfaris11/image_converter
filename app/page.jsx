@@ -181,3 +181,4 @@ export default function Home() {
                           type="range" 
                           className="custom-slider" 
                           id="quality" 
+                          name="quality" 
