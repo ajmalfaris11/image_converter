@@ -168,3 +168,4 @@ export default function Home() {
                             <option value="webp">WEBP (Optimized)</option>
                             <option value="avif">AVIF (Next-Gen)</option>
                             <option value="tiff">TIFF (High Quality)</option>
+                            <option value="gif">GIF</option>
