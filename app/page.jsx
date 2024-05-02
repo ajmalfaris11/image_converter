@@ -173,3 +173,4 @@ export default function Home() {
                     </div>
 
                     <div className="form-group slider-group">
+                        <div className="slider-header">
