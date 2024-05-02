@@ -178,3 +178,4 @@ export default function Home() {
                             <span id="qualityVal">{quality}%</span>
                         </div>
                         <input 
+                          type="range" 
