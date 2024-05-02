@@ -170,3 +170,4 @@ export default function Home() {
                             <option value="tiff">TIFF (High Quality)</option>
                             <option value="gif">GIF</option>
                         </select>
+                    </div>
