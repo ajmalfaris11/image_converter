@@ -179,3 +179,4 @@ export default function Home() {
                         </div>
                         <input 
                           type="range" 
+                          className="custom-slider" 
