@@ -190,3 +190,4 @@ export default function Home() {
                     </div>
 
                     <div className="form-group dimensions-group">
+                        <label><i className='bx bx-crop'></i> Resize (Optional)</label>
