@@ -193,3 +193,4 @@ export default function Home() {
                         <label><i className='bx bx-crop'></i> Resize (Optional)</label>
                         <div className="dimensions-inputs">
                             <input type="number" name="width" id="width" placeholder="Width (px)" />
+                            <span>×</span>
