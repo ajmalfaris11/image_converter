@@ -197,3 +197,4 @@ export default function Home() {
                             <input type="number" name="height" id="height" placeholder="Height (px)" />
                         </div>
                         <small className="hint">Leave blank to keep original size.</small>
+                    </div>
