@@ -186,3 +186,4 @@ export default function Home() {
                           max="100" 
                           value={quality}
                           onChange={(e) => setQuality(e.target.value)}
+                        />
