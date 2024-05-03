@@ -184,3 +184,4 @@ export default function Home() {
                           name="quality" 
                           min="1" 
                           max="100" 
+                          value={quality}
