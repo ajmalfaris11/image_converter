@@ -195,3 +195,4 @@ export default function Home() {
                             <input type="number" name="width" id="width" placeholder="Width (px)" />
                             <span>×</span>
                             <input type="number" name="height" id="height" placeholder="Height (px)" />
+                        </div>
