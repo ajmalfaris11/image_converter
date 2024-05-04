@@ -205,3 +205,4 @@ export default function Home() {
                     <i className='bx bx-right-arrow-alt'></i>
                 </button>
 
+            </form>
