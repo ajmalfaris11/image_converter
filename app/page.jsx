@@ -211,3 +211,4 @@ export default function Home() {
                 <div className="spinner"></div>
                 <p>Processing Image...</p>
             </div>
+            
