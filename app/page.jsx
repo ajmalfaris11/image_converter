@@ -207,3 +207,4 @@ export default function Home() {
 
             </form>
 
+            <div className={`loading-overlay ${loading ? 'active' : ''}`} id="loadingOverlay">
