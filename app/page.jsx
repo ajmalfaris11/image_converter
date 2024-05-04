@@ -200,3 +200,4 @@ export default function Home() {
                     </div>
                 </div>
 
+                <button type="submit" className="btn-primary" id="convertBtn">
