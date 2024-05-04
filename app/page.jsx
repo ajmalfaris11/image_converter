@@ -212,3 +212,4 @@ export default function Home() {
                 <p>Processing Image...</p>
             </div>
             
+        </div>
