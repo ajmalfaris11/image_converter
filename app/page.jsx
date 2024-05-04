@@ -209,3 +209,4 @@ export default function Home() {
 
             <div className={`loading-overlay ${loading ? 'active' : ''}`} id="loadingOverlay">
                 <div className="spinner"></div>
+                <p>Processing Image...</p>
