@@ -198,3 +198,4 @@ export default function Home() {
                         </div>
                         <small className="hint">Leave blank to keep original size.</small>
                     </div>
+                </div>
