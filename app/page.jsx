@@ -203,3 +203,4 @@ export default function Home() {
                 <button type="submit" className="btn-primary" id="convertBtn">
                     <span>Convert Image</span>
                     <i className='bx bx-right-arrow-alt'></i>
+                </button>
