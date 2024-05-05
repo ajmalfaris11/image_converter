@@ -6,3 +6,4 @@ export async function POST(request) {
         const formData = await request.formData()
         const image = formData.get('image')
         const conversionType = formData.get('conversionType')
+        const quality = formData.get('quality')
