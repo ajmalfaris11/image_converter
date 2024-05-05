@@ -8,3 +8,4 @@ export async function POST(request) {
         const conversionType = formData.get('conversionType')
         const quality = formData.get('quality')
         const width = formData.get('width')
+        const height = formData.get('height')
