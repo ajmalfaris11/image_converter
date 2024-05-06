@@ -10,3 +10,4 @@ export async function POST(request) {
         const width = formData.get('width')
         const height = formData.get('height')
 
+        if (!image) {
