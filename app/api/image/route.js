@@ -11,3 +11,4 @@ export async function POST(request) {
         const height = formData.get('height')
 
         if (!image) {
+            return new NextResponse('No file uploaded.', { status: 400 })
