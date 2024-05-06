@@ -23,3 +23,4 @@ export async function POST(request) {
         const parsedHeight = height ? parseInt(height) : null
         if (parsedWidth || parsedHeight) {
             transform = transform.resize({
+                width: parsedWidth || null,
