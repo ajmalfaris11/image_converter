@@ -21,3 +21,4 @@ export async function POST(request) {
 
         const parsedWidth = width ? parseInt(width) : null
         const parsedHeight = height ? parseInt(height) : null
+        if (parsedWidth || parsedHeight) {
