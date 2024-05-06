@@ -16,3 +16,4 @@ export async function POST(request) {
 
         const buffer = Buffer.from(await image.arrayBuffer())
         const originalFilename = image.name
+
