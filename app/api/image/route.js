@@ -12,3 +12,4 @@ export async function POST(request) {
 
         if (!image) {
             return new NextResponse('No file uploaded.', { status: 400 })
+        }
