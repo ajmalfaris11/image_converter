@@ -14,3 +14,4 @@ export async function POST(request) {
             return new NextResponse('No file uploaded.', { status: 400 })
         }
 
+        const buffer = Buffer.from(await image.arrayBuffer())
