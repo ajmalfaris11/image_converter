@@ -32,3 +32,4 @@ export async function POST(request) {
 
         const parsedQuality = quality ? parseInt(quality) : 100
 
+        switch (conversionType) {
