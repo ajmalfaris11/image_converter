@@ -25,3 +25,4 @@ export async function POST(request) {
             transform = transform.resize({
                 width: parsedWidth || null,
                 height: parsedHeight || null,
+                fit: 'inside',
