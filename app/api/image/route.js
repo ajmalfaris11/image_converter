@@ -28,3 +28,4 @@ export async function POST(request) {
                 fit: 'inside',
                 withoutEnlargement: true
             })
+        }
