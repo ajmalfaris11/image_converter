@@ -34,3 +34,4 @@ export async function POST(request) {
 
         switch (conversionType) {
             case 'png':
+                transform = transform.png({ quality: parsedQuality })
