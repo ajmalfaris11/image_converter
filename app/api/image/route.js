@@ -36,3 +36,4 @@ export async function POST(request) {
             case 'png':
                 transform = transform.png({ quality: parsedQuality })
                 break
+            case 'jpeg':
