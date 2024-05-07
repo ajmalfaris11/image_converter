@@ -26,3 +26,4 @@ export async function POST(request) {
                 width: parsedWidth || null,
                 height: parsedHeight || null,
                 fit: 'inside',
+                withoutEnlargement: true
