@@ -46,3 +46,4 @@ export async function POST(request) {
             case 'avif':
                 transform = transform.avif({ quality: parsedQuality })
                 break
+            case 'tiff':
