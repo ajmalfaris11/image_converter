@@ -41,3 +41,4 @@ export async function POST(request) {
                 transform = transform.jpeg({ quality: parsedQuality })
                 break
             case 'webp':
+                transform = transform.webp({ quality: parsedQuality })
