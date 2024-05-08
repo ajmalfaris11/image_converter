@@ -48,3 +48,4 @@ export async function POST(request) {
                 break
             case 'tiff':
                 transform = transform.tiff({ quality: parsedQuality })
+                break
