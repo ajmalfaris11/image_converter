@@ -45,3 +45,4 @@ export async function POST(request) {
                 break
             case 'avif':
                 transform = transform.avif({ quality: parsedQuality })
+                break
