@@ -52,3 +52,4 @@ export async function POST(request) {
             case 'gif':
                 transform = transform.gif()
                 break
+            default:
