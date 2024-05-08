@@ -53,3 +53,4 @@ export async function POST(request) {
                 transform = transform.gif()
                 break
             default:
+                return new NextResponse('Invalid conversion type.', { status: 400 })
