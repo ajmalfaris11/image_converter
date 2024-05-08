@@ -51,3 +51,4 @@ export async function POST(request) {
                 break
             case 'gif':
                 transform = transform.gif()
+                break
