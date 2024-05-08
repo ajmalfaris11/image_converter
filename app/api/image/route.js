@@ -44,3 +44,4 @@ export async function POST(request) {
                 transform = transform.webp({ quality: parsedQuality })
                 break
             case 'avif':
+                transform = transform.avif({ quality: parsedQuality })
