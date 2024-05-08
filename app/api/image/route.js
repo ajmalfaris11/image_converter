@@ -42,3 +42,4 @@ export async function POST(request) {
                 break
             case 'webp':
                 transform = transform.webp({ quality: parsedQuality })
+                break
