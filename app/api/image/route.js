@@ -65,3 +65,4 @@ export async function POST(request) {
         if (ext === 'jpg') contentType = 'image/jpeg'
 
         return new NextResponse(convertedImage, {
+            headers: {
