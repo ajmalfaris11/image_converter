@@ -63,3 +63,4 @@ export async function POST(request) {
 
         let contentType = `image/${ext}`
         if (ext === 'jpg') contentType = 'image/jpeg'
+
