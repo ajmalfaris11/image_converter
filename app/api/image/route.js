@@ -59,3 +59,4 @@ export async function POST(request) {
         const convertedImage = await transform.toBuffer()
 
         const ext = conversionType === 'jpeg' ? 'jpg' : conversionType
+        const convertedFilename = `converted_${originalFilename.replace(/\.[^/.]+$/, '')}.${ext}`
