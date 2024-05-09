@@ -62,3 +62,4 @@ export async function POST(request) {
         const convertedFilename = `converted_${originalFilename.replace(/\.[^/.]+$/, '')}.${ext}`
 
         let contentType = `image/${ext}`
+        if (ext === 'jpg') contentType = 'image/jpeg'
