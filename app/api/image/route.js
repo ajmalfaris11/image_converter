@@ -66,3 +66,4 @@ export async function POST(request) {
 
         return new NextResponse(convertedImage, {
             headers: {
+                'Content-Type': contentType,
