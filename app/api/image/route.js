@@ -56,3 +56,4 @@ export async function POST(request) {
                 return new NextResponse('Invalid conversion type.', { status: 400 })
         }
 
+        const convertedImage = await transform.toBuffer()
