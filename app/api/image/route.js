@@ -54,3 +54,4 @@ export async function POST(request) {
                 break
             default:
                 return new NextResponse('Invalid conversion type.', { status: 400 })
+        }
