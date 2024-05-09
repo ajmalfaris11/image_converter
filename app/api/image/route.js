@@ -57,3 +57,4 @@ export async function POST(request) {
         }
 
         const convertedImage = await transform.toBuffer()
+
