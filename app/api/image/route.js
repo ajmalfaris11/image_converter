@@ -72,3 +72,4 @@ export async function POST(request) {
         })
 
     } catch (error) {
+        console.error("Conversion Error:", error.message)
