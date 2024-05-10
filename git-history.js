@@ -3,17 +3,14 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const filesToProcess = [
-    'controllers/userController.js',
-    'public/script.js',
-    'public/styles.css',
-    'routes/userRoute.js',
-    'views/index.ejs',
-    '.gitignore',
-    'index.js',
-    'package.json'
+    'package.json',
+    'app/globals.css',
+    'app/layout.jsx',
+    'app/page.jsx',
+    'app/api/image/route.js'
 ];
 
-let currentDate = new Date('2024-03-10T10:00:00Z');
+let currentDate = new Date('2024-03-25T10:00:00Z');
 let commitCountToday = 0;
 let totalCommits = 0;
 
@@ -24,8 +21,8 @@ function run(cmd) {
 function commit(message) {
     commitCountToday++;
     totalCommits++;
-    // more than 20, max 30. Let's do 25 commits per day.
-    if (commitCountToday > 25) {
+    // max 15 commits per day
+    if (commitCountToday > 15) {
         currentDate.setDate(currentDate.getDate() + 1);
         commitCountToday = 1;
     }
@@ -39,12 +36,7 @@ function commit(message) {
 }
 
 try {
-    // 1. Init git
-    if (!fs.existsSync('.git')) {
-        run('git init');
-        run('git remote add origin https://github.com/ajmalfaris11/image_converter.git');
-        run('git branch -M main');
-    }
+    // 1. Repo is already initialized
 
     // 2. Read all files into memory and clear them
     const fileData = {};
@@ -76,9 +68,9 @@ try {
         }
     }
 
-    // 4. Finally add package-lock.json and any other files
-    run('git add .');
-    commit('Add package-lock.json and final touches');
+    // 4. Finally add all other files and handle deletions
+    run('git add -A');
+    commit('Add lockfile, cleanup legacy Express code, and final touches');
 
     console.log(`Finished creating ${totalCommits} commits.`);
 } catch (error) {
