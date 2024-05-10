@@ -69,3 +69,4 @@ export async function POST(request) {
                 'Content-Type': contentType,
                 'Content-Disposition': `attachment; filename="${convertedFilename}"`
             }
+        })
