@@ -73,3 +73,4 @@ export async function POST(request) {
 
     } catch (error) {
         console.error("Conversion Error:", error.message)
+        return new NextResponse('Internal Server Error', { status: 500 })
