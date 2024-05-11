@@ -1,18 +1,25 @@
-import './globals.css'
+import type { Metadata } from "next";
+import "./globals.css";
 
-export const metadata = {
-  title: 'Advanced Image Converter',
-  description: 'Convert, compress, and resize with ease.',
-}
+export const metadata: Metadata = {
+  title: "Squeeze",
+  description: "A fast, privacy-friendly image converter and compressor.",
+};
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="en">
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
       </head>
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning className="font-sans antialiased text-slate-800 bg-gradient-to-br from-indigo-200 to-pink-200 min-h-screen overflow-hidden">
+        {children}
+      </body>
     </html>
-  )
+  );
 }

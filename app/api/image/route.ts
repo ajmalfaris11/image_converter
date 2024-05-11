@@ -1,78 +1,71 @@
-import sharp from 'sharp'
 import { NextResponse } from 'next/server'
+import sharp from 'sharp'
 
-export async function POST(request) {
+export async function POST(req: Request) {
     try {
-        const formData = await request.formData()
-        const image = formData.get('image')
-        const conversionType = formData.get('conversionType')
-        const quality = formData.get('quality')
-        const width = formData.get('width')
-        const height = formData.get('height')
+        const formData = await req.formData()
+        const image = formData.get('image') as File | null
+        const conversionType = formData.get('conversionType') as string
+        const qualityStr = formData.get('quality') as string | null
+        const widthStr = formData.get('width') as string | null
+        const heightStr = formData.get('height') as string | null
 
         if (!image) {
-            return new NextResponse('No file uploaded.', { status: 400 })
+            return NextResponse.json({ error: 'No image uploaded' }, { status: 400 })
         }
 
         const buffer = Buffer.from(await image.arrayBuffer())
-        const originalFilename = image.name
+        let sharpInstance = sharp(buffer)
 
-        let transform = sharp(buffer)
-
-        const parsedWidth = width ? parseInt(width) : null
-        const parsedHeight = height ? parseInt(height) : null
-        if (parsedWidth || parsedHeight) {
-            transform = transform.resize({
-                width: parsedWidth || null,
-                height: parsedHeight || null,
+        // Handle resizing if width or height are provided
+        if (widthStr || heightStr) {
+            const width = widthStr ? parseInt(widthStr, 10) : undefined
+            const height = heightStr ? parseInt(heightStr, 10) : undefined
+            sharpInstance = sharpInstance.resize({
+                width,
+                height,
                 fit: 'inside',
                 withoutEnlargement: true
             })
         }
 
-        const parsedQuality = quality ? parseInt(quality) : 100
+        const quality = qualityStr ? parseInt(qualityStr, 10) : 90
+        let outputBuffer: Buffer
 
         switch (conversionType) {
             case 'png':
-                transform = transform.png({ quality: parsedQuality })
-                break
-            case 'jpeg':
-            case 'jpg':
-                transform = transform.jpeg({ quality: parsedQuality })
+                outputBuffer = await sharpInstance.png({ quality }).toBuffer()
                 break
             case 'webp':
-                transform = transform.webp({ quality: parsedQuality })
+                outputBuffer = await sharpInstance.webp({ quality }).toBuffer()
                 break
             case 'avif':
-                transform = transform.avif({ quality: parsedQuality })
+                outputBuffer = await sharpInstance.avif({ quality }).toBuffer()
                 break
             case 'tiff':
-                transform = transform.tiff({ quality: parsedQuality })
+                outputBuffer = await sharpInstance.tiff({ quality }).toBuffer()
                 break
             case 'gif':
-                transform = transform.gif()
+                outputBuffer = await sharpInstance.gif().toBuffer()
                 break
+            case 'jpg':
+            case 'jpeg':
             default:
-                return new NextResponse('Invalid conversion type.', { status: 400 })
+                outputBuffer = await sharpInstance.jpeg({ quality }).toBuffer()
+                break
         }
 
-        const convertedImage = await transform.toBuffer()
+        const contentType = conversionType === 'jpg' ? 'image/jpeg' : `image/${conversionType}`
 
-        const ext = conversionType === 'jpeg' ? 'jpg' : conversionType
-        const convertedFilename = `converted_${originalFilename.replace(/\.[^/.]+$/, '')}.${ext}`
-
-        let contentType = `image/${ext}`
-        if (ext === 'jpg') contentType = 'image/jpeg'
-
-        return new NextResponse(convertedImage, {
+        return new NextResponse(outputBuffer, {
             headers: {
                 'Content-Type': contentType,
-                'Content-Disposition': `attachment; filename="${convertedFilename}"`
+                'Content-Disposition': `attachment; filename="converted_image.${conversionType === 'jpeg' ? 'jpg' : conversionType}"`
             }
         })
 
     } catch (error) {
-        console.error("Conversion Error:", error.message)
-        return new NextResponse('Internal Server Error', { status: 500 })
+        console.error('Error processing image:', error)
+        return NextResponse.json({ error: 'Failed to process image' }, { status: 500 })
     }
 }
