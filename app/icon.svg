@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5" /> <!-- Indigo -->
+      <stop offset="100%" stop-color="#ec4899" /> <!-- Pink -->
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer squished frame -->
+  <path d="M 100 80 
+           L 412 80 
+           Q 320 256 412 432 
+           L 100 432 
+           Q 192 256 100 80 Z" 
+        fill="url(#g)" />
+        
+  <!-- Sun/Moon icon inside -->
+  <circle cx="256" cy="180" r="35" fill="#ffffff" />
+  
+  <!-- Mountains icon inside -->
+  <path d="M 150 360 
+           L 220 260 
+           L 260 310 
+           L 300 240 
+           L 360 360 Z" 
+        fill="#ffffff" />
+</svg>
