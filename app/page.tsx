@@ -405,7 +405,7 @@ export default function Home() {
   }
 
   return (
-    <div className={`relative w-screen h-screen flex overflow-hidden ${preview ? 'max-[900px]:flex-col max-[900px]:overflow-y-auto' : ''}`}>
+    <div className={`relative w-screen h-screen flex overflow-hidden ${preview ? 'max-[900px]:flex-col' : ''}`}>
         
         {mounted && (
             <button
@@ -422,7 +422,7 @@ export default function Home() {
         <div className="absolute blur-[80px] -z-10 rounded-full opacity-60 w-[25vw] h-[25vw] bg-brand-accent-light top-[40%] left-[60%] animate-float [animation-delay:-6s]"></div>
 
         <main 
-            className={`flex-1 relative flex justify-center items-center overflow-hidden transition-all duration-300 h-[calc(100vh-40px)] bg-white/65 dark:bg-slate-900/65 backdrop-blur-xl border border-white/80 dark:border-slate-700/80 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] rounded-[24px] ${preview ? 'm-5 ml-5 mr-2.5' : 'm-5'} max-[900px]:m-5 max-[900px]:h-[60vh] max-[900px]:flex-shrink-0 ${isDragActive ? 'bg-white/20 dark:bg-slate-800/40 border-4 border-dashed border-brand-primary' : ''}`}
+            className={`flex-1 relative flex justify-center items-center overflow-hidden transition-all duration-300 h-[calc(100vh-40px)] bg-white/65 dark:bg-slate-900/65 backdrop-blur-xl border border-white/80 dark:border-slate-700/80 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] rounded-[24px] ${preview ? 'm-5 ml-5 mr-2.5 max-[900px]:m-3 max-[900px]:mb-1.5 max-[900px]:h-[45vh] max-[900px]:w-auto max-[900px]:flex-none' : 'm-5 max-[900px]:m-3'} ${isDragActive ? 'bg-white/20 dark:bg-slate-800/40 border-4 border-dashed border-brand-primary' : ''}`}
             onDragEnter={onDragEnter}
             onDragLeave={onDragLeave}
             onDragOver={onDragOver}
@@ -566,7 +566,7 @@ export default function Home() {
         </main>
 
         {preview && (
-            <aside className="flex flex-col relative overflow-hidden w-[380px] h-[calc(100vh-40px)] m-5 ml-2.5 rounded-[24px] bg-white/65 dark:bg-slate-900/65 backdrop-blur-xl border border-white/80 dark:border-slate-700/80 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] animate-slideInRight shrink-0 max-[900px]:w-[calc(100%-40px)] max-[900px]:h-auto max-[900px]:min-h-[500px] max-[900px]:m-5">
+            <aside className="flex flex-col relative overflow-hidden w-[380px] h-[calc(100vh-40px)] m-5 ml-2.5 rounded-[24px] bg-white/65 dark:bg-slate-900/65 backdrop-blur-xl border border-white/80 dark:border-slate-700/80 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] animate-slideInRight shrink-0 max-[900px]:w-auto max-[900px]:flex-1 max-[900px]:h-auto max-[900px]:min-h-0 max-[900px]:m-3 max-[900px]:mt-1.5">
                 <header className="p-8 pb-5 border-b border-white/30 dark:border-slate-700/50 shrink-0">
                     <h3 className="text-2xl font-bold text-brand-text">Settings</h3>
                     <p className="text-brand-muted text-sm mt-1">Configure output format</p>
