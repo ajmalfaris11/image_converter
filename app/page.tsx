@@ -30,20 +30,20 @@ const CustomSelect = ({ value, onChange, options }: { value: string, onChange: (
     return (
         <div className="relative w-full" ref={containerRef}>
             <div 
-                className={`w-full p-4 rounded-xl border ${isOpen ? 'border-indigo-500 bg-white ring-4 ring-indigo-500/15' : 'border-white/60 bg-white/70 hover:bg-white/90'} text-slate-800 text-[15px] cursor-pointer flex justify-between items-center transition-all duration-300`}
+                className={`w-full p-4 rounded-xl border ${isOpen ? 'border-brand-primary bg-white ring-4 ring-brand-primary/15' : 'border-white/60 bg-white/70 hover:bg-white/90'} text-brand-text text-[15px] cursor-pointer flex justify-between items-center transition-all duration-300`}
                 onClick={() => setIsOpen(!isOpen)}
             >
                 <span className="font-medium">{selectedOption?.label}</span>
-                <i className={`bx bx-chevron-down text-xl text-slate-500 transition-transform duration-300 ${isOpen ? 'rotate-180 text-indigo-500' : ''}`}></i>
+                <i className={`bx bx-chevron-down text-xl text-brand-muted transition-transform duration-300 ${isOpen ? 'rotate-180 text-brand-primary' : ''}`}></i>
             </div>
             
             {isOpen && (
                 <div className="absolute top-full left-0 w-full mt-2 bg-white/95 backdrop-blur-xl rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.2)] border border-white/60 overflow-hidden z-[100]">
-                    <div className="max-h-60 overflow-y-auto hide-scrollbar p-1">
+                    <div className="max-h-60 overflow-y-auto p-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                         {options.map((opt) => (
                             <div 
                                 key={opt.value}
-                                className={`p-3 px-4 m-1 rounded-lg cursor-pointer transition-all duration-200 flex items-center justify-between ${value === opt.value ? 'bg-indigo-50 text-indigo-600 font-semibold' : 'text-slate-700 hover:bg-slate-100'}`}
+                                className={`p-3 px-4 m-1 rounded-lg cursor-pointer transition-all duration-200 flex items-center justify-between ${value === opt.value ? 'bg-brand-primary-soft text-brand-primary-dark font-semibold' : 'text-brand-text/80 hover:bg-slate-100'}`}
                                 onClick={() => {
                                     onChange(opt.value)
                                     setIsOpen(false)
@@ -246,14 +246,14 @@ export default function Home() {
   }
 
   return (
-    <div className={`app-container relative w-screen h-screen flex overflow-hidden ${preview ? 'has-image' : ''}`}>
+    <div className={`relative w-screen h-screen flex overflow-hidden ${preview ? 'max-[900px]:flex-col max-[900px]:overflow-y-auto' : ''}`}>
         {/* Animated Blobs */}
-        <div className="blob blob-1"></div>
-        <div className="blob blob-2"></div>
-        <div className="blob blob-3"></div>
+        <div className="absolute blur-[80px] -z-10 rounded-full opacity-60 w-[30vw] h-[30vw] bg-brand-primary-light top-[10%] left-[20%] animate-float"></div>
+        <div className="absolute blur-[80px] -z-10 rounded-full opacity-60 w-[40vw] h-[40vw] bg-brand-secondary-light bottom-[10%] right-[15%] animate-float [animation-delay:-3s]"></div>
+        <div className="absolute blur-[80px] -z-10 rounded-full opacity-60 w-[25vw] h-[25vw] bg-brand-accent-light top-[40%] left-[60%] animate-float [animation-delay:-6s]"></div>
 
         <main 
-            className={`main-view ${isDragActive ? 'bg-white/20 border-4 border-dashed border-indigo-500' : ''}`}
+            className={`flex-1 relative flex justify-center items-center overflow-hidden transition-all duration-300 h-[calc(100vh-40px)] bg-white/65 backdrop-blur-xl border border-white/80 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] rounded-[24px] ${preview ? 'm-5 ml-5 mr-2.5' : 'm-5'} max-[900px]:m-5 max-[900px]:h-[60vh] max-[900px]:flex-shrink-0 ${isDragActive ? 'bg-white/20 border-4 border-dashed border-brand-primary' : ''}`}
             onDragEnter={onDragEnter}
             onDragLeave={onDragLeave}
             onDragOver={onDragOver}
@@ -276,39 +276,39 @@ export default function Home() {
             {!preview ? (
                 <div className="text-center flex flex-col items-center gap-10 z-10 p-4">
                     <div className="text-center">
-                        <h2 className="text-5xl font-bold mb-3 bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent">Squeeze</h2>
-                        <p className="text-slate-500 text-lg">Convert, compress, and resize with ease.</p>
+                        <h2 className="text-5xl font-bold mb-3 bg-gradient-to-r from-brand-primary-dark to-brand-secondary bg-clip-text text-transparent">Squeeze</h2>
+                        <p className="text-brand-muted text-lg">Convert, compress, and resize with ease.</p>
                     </div>
                     <div 
-                        className="w-full max-w-[500px] h-[250px] bg-white/40 border-2 border-dashed border-slate-300 rounded-2xl flex flex-col justify-center items-center backdrop-blur-sm transition-all duration-300 hover:bg-white/80 hover:border-indigo-500 cursor-pointer" 
+                        className="w-full max-w-[500px] h-[250px] bg-white/40 border-2 border-dashed border-slate-300 rounded-2xl flex flex-col justify-center items-center backdrop-blur-sm transition-all duration-300 hover:bg-white/80 hover:border-brand-primary cursor-pointer" 
                         onClick={() => fileInputRef.current?.click()}
                     >
-                        <i className='bx bx-cloud-upload text-6xl text-indigo-500 mb-4 transition-transform hover:-translate-y-1'></i>
-                        <span className="text-slate-800 font-semibold text-lg mb-2">
+                        <i className='bx bx-cloud-upload text-6xl text-brand-primary mb-4 transition-transform hover:-translate-y-1'></i>
+                        <span className="text-brand-text font-semibold text-lg mb-2">
                             Click to Upload or Drag & Drop
                         </span>
-                        <p className="text-slate-500 text-sm">Supported formats: PNG, JPG, WEBP, GIF</p>
+                        <p className="text-brand-muted text-sm">Supported formats: PNG, JPG, WEBP, GIF</p>
                     </div>
                 </div>
             ) : (
-                <div className="image-preview-container comparison-container w-full h-full p-0 flex justify-center items-center relative">
+                <div className="relative select-none overflow-hidden w-full h-full p-0 flex justify-center items-center">
                     
                     {/* Base Image (Original) */}
-                    <img src={preview} alt="Original" className="comparison-image original-image" />
+                    <img src={preview} alt="Original" className="relative w-full h-full object-contain bg-transparent pointer-events-none" />
                     
                     {/* Overlay Image (Compressed) */}
                     {compressedPreview && (
                         <div 
-                            className="comparison-overlay"
+                            className="absolute inset-0 pointer-events-none"
                             style={{ 
                                 clipPath: `inset(0 0 0 ${sliderPosition}%)`,
                                 WebkitClipPath: `inset(0 0 0 ${sliderPosition}%)`
                             }}
                         >
-                            <img src={compressedPreview} alt="Compressed" className="comparison-image compressed-image" />
+                            <img src={compressedPreview} alt="Compressed" className="absolute inset-0 w-full h-full object-contain bg-transparent pointer-events-none" />
                             {isProcessingLive && (
-                                <div className="absolute inset-0 bg-white/40 flex justify-center items-center z-10">
-                                    <div className="w-8 h-8 border-4 border-indigo-500/30 border-t-indigo-500 rounded-full animate-spin"></div>
+                                <div className="absolute inset-0 bg-white/40 flex justify-center items-center z-10 pointer-events-none">
+                                    <div className="w-8 h-8 border-4 border-brand-primary/30 border-t-brand-primary rounded-full animate-spin"></div>
                                 </div>
                             )}
                         </div>
@@ -323,21 +323,21 @@ export default function Home() {
                                 max="100" 
                                 value={sliderPosition} 
                                 onChange={(e) => setSliderPosition(e.target.value)}
-                                className="comparison-slider"
+                                className="absolute inset-0 w-full h-full bg-transparent appearance-none m-0 outline-none z-20 cursor-col-resize [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-10 [&::-webkit-slider-thumb]:h-[100vh] [&::-webkit-slider-thumb]:bg-transparent [&::-webkit-slider-thumb]:cursor-col-resize [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:w-10 [&::-moz-range-thumb]:h-[100vh] [&::-moz-range-thumb]:bg-transparent [&::-moz-range-thumb]:cursor-col-resize [&::-moz-range-thumb]:border-none"
                             />
                             <div 
-                                className="slider-handle-line"
+                                className="absolute top-0 bottom-0 left-1/2 w-1 bg-white -translate-x-1/2 pointer-events-none z-15 shadow-[0_0_10px_rgba(0,0,0,0.5)] flex justify-center items-center"
                                 style={{ left: `${sliderPosition}%` }}
                             >
-                                <div className="w-10 h-10 bg-white rounded-full flex justify-center items-center text-indigo-500 shadow-lg text-2xl">
+                                <div className="w-10 h-10 bg-white rounded-full flex justify-center items-center text-brand-primary shadow-lg text-2xl">
                                     <i className='bx bx-code'></i>
                                 </div>
                             </div>
                             
-                            <div className="label-original">
+                            <div className="absolute bottom-10 left-10 py-3 px-6 bg-black/60 text-white rounded-full text-sm font-semibold backdrop-blur-sm pointer-events-none z-10">
                                 Original {file && <span className="opacity-80 text-xs ml-1.5">{formatBytes(file.size)}</span>}
                             </div>
-                            <div className="label-compressed">
+                            <div className="absolute bottom-10 right-10 py-3 px-6 bg-black/60 text-white rounded-full text-sm font-semibold backdrop-blur-sm pointer-events-none z-10">
                                 Compressed {compressedSize && <span className="opacity-80 text-xs ml-1.5">{formatBytes(compressedSize)}</span>}
                                 {file && compressedSize && (
                                     <span style={{ color: compressedSize < file.size ? '#4ade80' : '#f87171' }} className="ml-2 text-[13px]">
@@ -350,7 +350,7 @@ export default function Home() {
                     
                     <button 
                         type="button" 
-                        className="absolute top-8 right-8 w-10 h-10 rounded-full bg-white/80 border border-white/80 flex justify-center items-center text-2xl cursor-pointer shadow-lg transition-all text-slate-800 hover:bg-white hover:scale-110 hover:text-red-500 z-50" 
+                        className="absolute top-8 right-8 w-10 h-10 rounded-full bg-white/80 border border-white/80 flex justify-center items-center text-2xl cursor-pointer shadow-lg transition-all text-brand-text hover:bg-white hover:scale-110 hover:text-red-500 z-50" 
                         onClick={resetState} 
                         title="Upload a different image"
                     >
@@ -361,18 +361,18 @@ export default function Home() {
         </main>
 
         {preview && (
-            <aside className="settings-sidebar">
+            <aside className="flex flex-col relative overflow-hidden w-[380px] h-[calc(100vh-40px)] m-5 ml-2.5 rounded-[24px] bg-white/65 backdrop-blur-xl border border-white/80 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] animate-slideInRight shrink-0 max-[900px]:w-[calc(100%-40px)] max-[900px]:h-auto max-[900px]:min-h-[500px] max-[900px]:m-5">
                 <header className="p-8 pb-5 border-b border-white/30 shrink-0">
-                    <h3 className="text-2xl font-bold text-slate-800">Settings</h3>
-                    <p className="text-slate-500 text-sm mt-1">Configure output format</p>
+                    <h3 className="text-2xl font-bold text-brand-text">Settings</h3>
+                    <p className="text-brand-muted text-sm mt-1">Configure output format</p>
                 </header>
 
                 <form onSubmit={handleDownload} id="converterForm" className="flex-1 flex flex-col overflow-hidden relative">
                     
-                    <div className="p-8 pb-4 flex-1 overflow-y-auto hide-scrollbar flex flex-col gap-8">
+                    <div className="p-8 pb-4 flex-1 overflow-y-auto flex flex-col gap-8 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                         <div className="flex flex-col gap-2.5">
-                            <label className="font-medium text-[15px] flex items-center gap-2 text-slate-800">
-                                <i className='bx bx-refresh text-indigo-500 text-lg'></i> Output Format
+                            <label className="font-medium text-[15px] flex items-center gap-2 text-brand-text">
+                                <i className='bx bx-refresh text-brand-primary text-lg'></i> Output Format
                             </label>
                             <CustomSelect 
                                 value={conversionType} 
@@ -383,14 +383,14 @@ export default function Home() {
 
                         <div className="flex flex-col gap-2.5">
                             <div className="flex justify-between items-center">
-                                <label htmlFor="quality" className="font-medium text-[15px] flex items-center gap-2 text-slate-800">
-                                    <i className='bx bx-slider-alt text-indigo-500 text-lg'></i> Quality
+                                <label htmlFor="quality" className="font-medium text-[15px] flex items-center gap-2 text-brand-text">
+                                    <i className='bx bx-slider-alt text-brand-primary text-lg'></i> Quality
                                 </label>
-                                <span className="text-[13px] font-semibold text-indigo-500 bg-indigo-500/15 py-1 px-2.5 rounded-full">{quality}%</span>
+                                <span className="text-[13px] font-semibold text-brand-primary bg-brand-primary/15 py-1 px-2.5 rounded-full">{quality}%</span>
                             </div>
                             <input 
                               type="range" 
-                              className="custom-slider" 
+                              className="w-full h-2 rounded-md bg-white/80 outline-none mt-1 appearance-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-brand-primary [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:transition-transform [&::-webkit-slider-thumb]:duration-300 [&::-webkit-slider-thumb]:shadow-[0_2px_8px_rgba(99,102,241,0.5)] hover:[&::-webkit-slider-thumb]:scale-125 [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-brand-primary [&::-moz-range-thumb]:cursor-pointer [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:transition-transform [&::-moz-range-thumb]:duration-300 [&::-moz-range-thumb]:shadow-[0_2px_8px_rgba(99,102,241,0.5)] hover:[&::-moz-range-thumb]:scale-125" 
                               id="quality" 
                               name="quality" 
                               min="1" 
@@ -402,50 +402,52 @@ export default function Home() {
 
                         <div className="flex flex-col gap-2.5">
                             <div className="flex justify-between items-center">
-                                <label className="font-medium text-[15px] flex items-center gap-2 text-slate-800">
-                                    <i className='bx bx-crop text-indigo-500 text-lg'></i> Resize
+                                <label className="font-medium text-[15px] flex items-center gap-2 text-brand-text">
+                                    <i className='bx bx-crop text-brand-primary text-lg'></i> Resize
                                 </label>
                                 <button 
                                     type="button" 
                                     onClick={() => setMaintainRatio(!maintainRatio)}
-                                    className={`text-lg transition-colors ${maintainRatio ? 'text-indigo-500' : 'text-slate-400'}`}
+                                    className={`text-lg transition-colors ${maintainRatio ? 'text-brand-primary' : 'text-brand-muted/70'}`}
                                     title={maintainRatio ? "Unlock aspect ratio" : "Lock aspect ratio"}
                                 >
                                     <i className={maintainRatio ? 'bx bx-link' : 'bx bx-unlink'}></i>
                                 </button>
                             </div>
                             
-                            <div className="dimensions-inputs">
+                            <div className="flex items-center gap-2">
                                 <input 
                                     type="number" 
                                     name="width" 
                                     id="width" 
                                     placeholder="W (px)" 
                                     value={width}
+                                    className="w-full p-4 rounded-xl border border-white/60 bg-white/70 text-brand-text text-[15px] outline-none transition-all duration-300 appearance-none focus:border-brand-primary focus:bg-white focus:ring-4 focus:ring-brand-primary/15"
                                     onChange={(e) => handleWidthChange(e.target.value)}
                                 />
-                                <span className="text-slate-500 font-semibold">×</span>
+                                <span className="text-brand-muted font-semibold">×</span>
                                 <input 
                                     type="number" 
                                     name="height" 
                                     id="height" 
                                     placeholder="H (px)" 
                                     value={height}
+                                    className="w-full p-4 rounded-xl border border-white/60 bg-white/70 text-brand-text text-[15px] outline-none transition-all duration-300 appearance-none focus:border-brand-primary focus:bg-white focus:ring-4 focus:ring-brand-primary/15"
                                     onChange={(e) => handleHeightChange(e.target.value)}
                                 />
                             </div>
                             
                             <div className="flex justify-between gap-2 mt-1">
-                                <button type="button" onClick={() => applyScale(0.25)} className="flex-1 py-1 px-2 text-xs font-medium text-slate-600 bg-white/50 border border-white rounded hover:bg-indigo-50 hover:text-indigo-600 transition-colors">25%</button>
-                                <button type="button" onClick={() => applyScale(0.5)} className="flex-1 py-1 px-2 text-xs font-medium text-slate-600 bg-white/50 border border-white rounded hover:bg-indigo-50 hover:text-indigo-600 transition-colors">50%</button>
-                                <button type="button" onClick={() => applyScale(0.75)} className="flex-1 py-1 px-2 text-xs font-medium text-slate-600 bg-white/50 border border-white rounded hover:bg-indigo-50 hover:text-indigo-600 transition-colors">75%</button>
-                                <button type="button" onClick={() => applyScale(1)} className="flex-1 py-1 px-2 text-xs font-medium text-slate-600 bg-white/50 border border-white rounded hover:bg-indigo-50 hover:text-indigo-600 transition-colors">100%</button>
+                                <button type="button" onClick={() => applyScale(0.25)} className="flex-1 py-1 px-2 text-xs font-medium text-brand-text/70 bg-white/50 border border-white rounded hover:bg-brand-primary-soft hover:text-brand-primary-dark transition-colors">25%</button>
+                                <button type="button" onClick={() => applyScale(0.5)} className="flex-1 py-1 px-2 text-xs font-medium text-brand-text/70 bg-white/50 border border-white rounded hover:bg-brand-primary-soft hover:text-brand-primary-dark transition-colors">50%</button>
+                                <button type="button" onClick={() => applyScale(0.75)} className="flex-1 py-1 px-2 text-xs font-medium text-brand-text/70 bg-white/50 border border-white rounded hover:bg-brand-primary-soft hover:text-brand-primary-dark transition-colors">75%</button>
+                                <button type="button" onClick={() => applyScale(1)} className="flex-1 py-1 px-2 text-xs font-medium text-brand-text/70 bg-white/50 border border-white rounded hover:bg-brand-primary-soft hover:text-brand-primary-dark transition-colors">100%</button>
                             </div>
                         </div>
                     </div>
 
                     <div className="p-8 pt-4 shrink-0 border-t border-white/20 bg-white/10 backdrop-blur-md">
-                        <button type="submit" className="btn-primary m-0" id="downloadBtn" disabled={isProcessingLive}>
+                        <button type="submit" className="w-full p-[18px] border-none rounded-2xl text-white text-[17px] font-semibold cursor-pointer flex justify-center items-center gap-2.5 transition-all duration-300 bg-gradient-to-br from-brand-primary to-brand-accent shadow-[0_8px_20px_rgba(99,102,241,0.3)] hover:-translate-y-0.5 hover:shadow-[0_12px_25px_rgba(99,102,241,0.4)] active:translate-y-[1px] m-0 disabled:opacity-70 disabled:cursor-not-allowed" id="downloadBtn" disabled={isProcessingLive}>
                             <span>{isProcessingLive ? 'Processing...' : 'Download Image'}</span>
                             <i className={isProcessingLive ? 'bx bx-loader-alt animate-spin' : 'bx bx-download'}></i>
                         </button>
