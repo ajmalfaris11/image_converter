@@ -329,8 +329,11 @@ export default function Home() {
                                 className="absolute top-0 bottom-0 left-1/2 w-1 bg-white -translate-x-1/2 pointer-events-none z-15 shadow-[0_0_10px_rgba(0,0,0,0.5)] flex justify-center items-center"
                                 style={{ left: `${sliderPosition}%` }}
                             >
-                                <div className="w-10 h-10 bg-white rounded-full flex justify-center items-center text-brand-primary shadow-lg text-2xl">
-                                    <i className='bx bx-code'></i>
+                                <div className="w-10 h-10 bg-white rounded-full flex justify-center items-center text-brand-primary shadow-lg">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M9 18l-6-6 6-6" />
+                                        <path d="M15 18l6-6-6-6" />
+                                    </svg>
                                 </div>
                             </div>
                             
