@@ -9,6 +9,19 @@ export async function POST(req: Request) {
         const qualityStr = formData.get('quality') as string | null
         const widthStr = formData.get('width') as string | null
         const heightStr = formData.get('height') as string | null
+        const preserveMetadata = formData.get('preserveMetadata') === 'true'
+        const metaAuthor = formData.get('metaAuthor') as string | null
+        const metaCopyright = formData.get('metaCopyright') as string | null
+        const metaTitle = formData.get('metaTitle') as string | null
+        const metaSoftware = formData.get('metaSoftware') as string | null
+        const metaMake = formData.get('metaMake') as string | null
+        const metaLocation = formData.get('metaLocation') as string | null
+
+        const cropXStr = formData.get('cropX') as string | null
+        const cropYStr = formData.get('cropY') as string | null
+        const cropWStr = formData.get('cropWidth') as string | null
+        const cropHStr = formData.get('cropHeight') as string | null
+        const rotationStr = formData.get('rotation') as string | null
 
         if (!image) {
             return NextResponse.json({ error: 'No image uploaded' }, { status: 400 })
@@ -16,6 +29,61 @@ export async function POST(req: Request) {
 
         const buffer = Buffer.from(await image.arrayBuffer())
         let sharpInstance = sharp(buffer)
+        
+        if (preserveMetadata) {
+            const metadataOptions: any = {}
+            if (metaAuthor || metaCopyright || metaTitle || metaSoftware || metaMake || metaLocation) {
+                metadataOptions.exif = { IFD0: {} }
+                
+                // Mandatory TIFF tags for valid EXIF
+                metadataOptions.exif.IFD0.XResolution = 72
+                metadataOptions.exif.IFD0.YResolution = 72
+                metadataOptions.exif.IFD0.ResolutionUnit = 2 // inches
+
+                if (metaAuthor) metadataOptions.exif.IFD0.Artist = metaAuthor
+                if (metaCopyright) metadataOptions.exif.IFD0.Copyright = metaCopyright
+                if (metaTitle) metadataOptions.exif.IFD0.ImageDescription = metaTitle
+                if (metaSoftware) metadataOptions.exif.IFD0.Software = metaSoftware
+                if (metaMake) metadataOptions.exif.IFD0.Make = metaMake
+                
+                if (metaLocation) {
+                    const coords = metaLocation.split(',').map(s => parseFloat(s.trim()));
+                    if (coords.length === 2 && !isNaN(coords[0]) && !isNaN(coords[1])) {
+                        const decimalToExifGps = (decimal: number) => {
+                            const absolute = Math.abs(decimal);
+                            const degrees = Math.floor(absolute);
+                            const minutesNotTruncated = (absolute - degrees) * 60;
+                            const minutes = Math.floor(minutesNotTruncated);
+                            const seconds = Math.floor((minutesNotTruncated - minutes) * 60 * 100);
+                            return `${degrees}/1, ${minutes}/1, ${seconds}/100`;
+                        };
+                        metadataOptions.exif.IFD3 = {
+                            GPSLatitudeRef: coords[0] >= 0 ? 'N' : 'S',
+                            GPSLatitude: decimalToExifGps(coords[0]),
+                            GPSLongitudeRef: coords[1] >= 0 ? 'E' : 'W',
+                            GPSLongitude: decimalToExifGps(coords[1])
+                        };
+                    }
+                }
+            }
+            sharpInstance = sharpInstance.withMetadata(metadataOptions)
+        }
+
+        if (rotationStr) {
+            const rotation = parseFloat(rotationStr)
+            if (rotation !== 0) {
+                sharpInstance = sharpInstance.rotate(rotation)
+            }
+        }
+
+        if (cropXStr && cropYStr && cropWStr && cropHStr) {
+            sharpInstance = sharpInstance.extract({
+                left: Math.round(parseFloat(cropXStr)),
+                top: Math.round(parseFloat(cropYStr)),
+                width: Math.round(parseFloat(cropWStr)),
+                height: Math.round(parseFloat(cropHStr))
+            })
+        }
 
         // Handle resizing if width or height are provided
         if (widthStr || heightStr) {
@@ -57,7 +125,7 @@ export async function POST(req: Request) {
 
         const contentType = conversionType === 'jpg' ? 'image/jpeg' : `image/${conversionType}`
 
-        return new NextResponse(outputBuffer, {
+        return new NextResponse(outputBuffer as any, {
             headers: {
                 'Content-Type': contentType,
                 'Content-Disposition': `attachment; filename="converted_image.${conversionType === 'jpeg' ? 'jpg' : conversionType}"`
