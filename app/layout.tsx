@@ -17,7 +17,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
       </head>
-      <body suppressHydrationWarning className="font-sans antialiased text-slate-800 bg-gradient-to-br from-indigo-200 to-pink-200 min-h-screen overflow-hidden">
+      <body suppressHydrationWarning className="font-sans antialiased text-brand-text bg-gradient-to-br from-brand-bgstart to-brand-bgend min-h-screen overflow-hidden">
         {children}
       </body>
     </html>
