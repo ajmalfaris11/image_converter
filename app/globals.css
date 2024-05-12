@@ -26,4 +26,16 @@
     --text-primary: 30 41 59;            /* Main text color (slate-800) */
     --text-muted: 100 116 139;           /* Secondary text color (slate-500) */
   }
+
+  .dark {
+    /* 
+      Dark Mode Overrides 
+      These variables automatically apply when dark mode is active.
+    */
+    --brand-primary-soft: 30 41 59;      /* Dark slate instead of light indigo (slate-800) */
+    --bg-gradient-start: 15 23 42;       /* Very dark slate/blue (slate-900) */
+    --bg-gradient-end: 8 15 28;          /* Almost black blue */
+    --text-primary: 248 250 252;         /* Very light text (slate-50) */
+    --text-muted: 148 163 184;           /* Light muted text (slate-400) */
+  }
 }
